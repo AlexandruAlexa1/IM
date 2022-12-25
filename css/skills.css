@@ -1,0 +1,113 @@
+.skills {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+
+.skill {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+}
+
+.skill .percent {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+}
+
+.skill .percent svg {
+    position: relative;
+    width: 15rem;
+    height: 15rem;
+    transform: rotate(270deg);
+
+}
+
+.skill .percent svg circle {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    stroke-width: 2;
+    stroke: #000;
+    transform: translate(.5rem, .5rem);
+}
+
+.skill .percent svg circle:nth-child(2) {
+    stroke: var(--color);
+    stroke-dasharray: 440;
+    stroke-dashoffset: calc(440 - (440 * var(--percent)) / 100);
+    opacity: 0;
+    animation: fadeIn 3s 7s linear forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.dot {
+    position: absolute;
+    inset: .5rem;
+    z-index: 10;
+    opacity: 0;
+    animation: moveDot 2s 5s linear forwards;
+}
+
+@keyframes moveDot {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(calc(3.6deg * var(--percent)));
+    }
+}
+
+.dot::before {
+    content: '';
+    width: 1rem;
+    height: 1rem;
+    background-color: var(--color);
+    position: absolute;
+    top: -0.5rem;
+    left: 50%;
+    border-radius: 50%;
+    box-shadow: 0 0 1rem var(--color), 0 0 3rem var(--color);
+}
+
+.skill .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color);
+    opacity: 0;
+    animation: fadeIn 3s 7s linear forwards;
+}
+
+.number h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color);
+    font-size: 2.2rem;
+    letter-spacing: .2rem;
+}
+
+.number p {
+    text-align: center;
+    letter-spacing: .2rem;
+    font-size: 1.5rem;
+}

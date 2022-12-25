@@ -1,0 +1,117 @@
+.project {
+    color: #fff;
+    width: 120rem;
+    height: 65rem;
+    position: relative;
+    margin: 5rem auto;
+    transition: all .5s;
+    opacity: 0;
+    visibility: hidden;
+    animation: show 3s 5s forwards;
+}
+
+.project-img {
+    width: 100%;
+    height: 100%;
+    transition: all .5s;
+}
+
+.project:hover img {
+    filter: blur(.5rem);
+}
+
+.project-name {
+    background: rgba(0, 0, 0, 0.8);
+    letter-spacing: .2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    padding: .2rem 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.project:hover .project-name {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-description {
+    width: 50rem;
+    background: rgba(0, 0, 0, 0.8);
+    letter-spacing: .2rem;
+    padding: .2rem 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1.5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .5s;
+}
+
+.project:hover .project-description {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-description h5 {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    margin-bottom: .4rem;
+    color: var(--primaryColor);
+}
+
+.project-description .description {
+    margin-bottom: 2rem;
+}
+
+.project-btn {
+    background-color: var(--primaryColor);
+    color: #222;
+    position: absolute;
+    text-transform: uppercase;
+    bottom: 0;
+    right: 0;
+    font-size: 1.4rem;
+    letter-spacing: .5rem;
+    padding: .2rem 1rem;
+    transition: background .5s;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.project-btn::before {
+    content: "";
+    width: .4rem;
+    height: 100%;
+    background-color: rgb(26, 93, 95);
+    position: absolute;
+    top: .0rem;
+    left: -.4rem;
+    transform: skewY(45deg);
+    transform-origin: right;
+}
+
+.project-btn::after {
+    content: "";
+    width: 100%;
+    height: .4rem;
+    background-color: rgb(39, 174, 179);
+    position: absolute;
+    top: -.4rem;
+    left: 0;
+    transform: skewX(45deg);
+    transform-origin: bottom;
+}
+
+.project:hover .project-btn  {
+    opacity: 1;
+    visibility: visible;
+}
+
+.project-btn:hover {
+    background-color: var(--hover);
+}
