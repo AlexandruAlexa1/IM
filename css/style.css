@@ -35,9 +35,38 @@ body {
     letter-spacing: .5rem;
     visibility: hidden;
     opacity: 0;
+    white-space: nowrap;
     font-family: 'Rubik 80s Fade', cursive;
     animation-name: show;
     animation-duration: 3s;
+}
+
+@media screen and (max-width: 900px) { 
+    .message {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 600px) { 
+    .message {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .message {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+    }
+}
+
+
+@media screen and (max-width: 400px) { 
+    .message {
+        top: 40%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.6rem;
+    }
 }
 
 .message:nth-child(1) {
@@ -82,6 +111,24 @@ body {
     opacity: 0;
     visibility: hidden;
     animation: showMyimg 3s 10s forwards;
+}
+
+@media screen and (max-width: 900px) { 
+    .myimg {
+        width: 40rem;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .myimg {
+        width: 35rem;
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    .myimg {
+        width: 30rem;
+    }
 }
 
 @keyframes showMyimg {
@@ -141,6 +188,35 @@ body {
     background-color: var(--hover);
 }
 
+@media screen and (max-width: 900px) { 
+    .projects-btn {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .projects-btn {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    .projects-btn {
+        top: 45%;
+        font-size: 1rem;
+    }
+
+    .projects-btn::before {
+        width: .3rem;
+        left: -.3rem;
+    }
+
+    .projects-btn::after {
+        height: .3rem;
+        top: -.3rem;
+    }
+}
+
 .title {
     position: fixed;
     top: 50%;
@@ -157,6 +233,33 @@ body {
     color: var(--primaryColor);
 }
 
+@media screen and (max-width: 1200px) { 
+    .title div {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (max-width: 1050px) { 
+    .title div {
+        font-size: 4.5rem;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    .title {
+        left: 2%;
+    }
+
+    .title div {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 650px) { 
+    .title {
+        display: none;
+    }
+}
 /* Cube */
 .cube-wrapper {
     position: fixed;
@@ -228,6 +331,52 @@ body {
     filter: blur(5rem);
 }
 
+@media screen and (max-width: 1200px) { 
+    .cube {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .cube div span {
+        transform: rotateY(calc(90deg * var(--i))) translateZ(10rem);
+    }
+
+    .cube .top {
+        width: 20rem;
+        height: 20rem;
+        transform: rotateX(90deg) translateZ(10rem);
+    }
+
+    .cube .top::before {
+        width: 20rem;
+        height: 20rem;
+        transform: translateZ(-30rem);
+    }
+}
+
+@media screen and (max-width: 750px) { 
+    .cube {
+        width: 15rem;
+        height: 15rem;
+    }
+
+    .cube div span {
+        transform: rotateY(calc(90deg * var(--i))) translateZ(7.5rem);
+    }
+
+    .cube .top {
+        width: 15rem;
+        height: 15rem;
+        transform: rotateX(90deg) translateZ(7.5rem);
+    }
+
+    .cube .top::before {
+        width: 15rem;
+        height: 15rem;
+        transform: translateZ(-25rem);
+    }
+}
+
 @keyframes show {
     100% {
         opacity: 0;
@@ -268,5 +417,11 @@ body {
 
 .menu a:hover {
     color: var(--hover);
+}
+
+@media screen and (max-width: 500px) { 
+    .menu a {
+        font-size: 1.5rem;
+    }
 }
 
