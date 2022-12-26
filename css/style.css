@@ -32,6 +32,7 @@ body {
     right: .5rem;
     display: flex;
     flex-direction: column;
+    z-index: 10;
 }
 
 .menu a {
@@ -44,56 +45,23 @@ body {
 .menu a:hover {
     color: var(--hover);
 }
-
-@media screen and (max-width: 500px) { 
-    .menu a {
-        font-size: 1.5rem;
-    }
-}
 /* End of Menu */
 
 .message {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: var(--primaryColor);
-    font-size: 4.5rem;
+    font-size: 2.5rem;
+    text-transform: uppercase;
     letter-spacing: .5rem;
     visibility: hidden;
     opacity: 0;
     white-space: nowrap;
-    font-family: 'Rubik 80s Fade', cursive;
+    font-family: 'Roboto', sans-serif;
     animation-name: show;
     animation-duration: 3s;
-}
-
-@media screen and (max-width: 900px) { 
-    .message {
-        font-size: 3rem;
-    }
-}
-
-@media screen and (max-width: 600px) { 
-    .message {
-        font-size: 2.5rem;
-    }
-}
-
-@media screen and (max-width: 500px) { 
-    .message {
-        font-family: 'Roboto', sans-serif;
-        font-size: 2rem;
-    }
-}
-
-
-@media screen and (max-width: 400px) { 
-    .message {
-        top: 40%;
-        font-family: 'Roboto', sans-serif;
-        font-size: 1.6rem;
-    }
 }
 
 .message:nth-child(1) {
@@ -140,24 +108,6 @@ body {
     animation: showMyimg 3s 10s forwards;
 }
 
-@media screen and (max-width: 900px) { 
-    .myimg {
-        width: 40rem;
-    }
-}
-
-@media screen and (max-width: 500px) { 
-    .myimg {
-        width: 35rem;
-    }
-}
-
-@media screen and (max-width: 400px) { 
-    .myimg {
-        width: 30rem;
-    }
-}
-
 @keyframes showMyimg {
     50% {
        opacity: .5; 
@@ -171,7 +121,7 @@ body {
 
 .projects-btn {
     position: absolute;
-    top: 55%;
+    top: 50%;
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--primaryColor);
@@ -190,7 +140,7 @@ body {
 .projects-btn::before {
     content: "";
     width: .4rem;
-    height: 104%;
+    height: 100%;
     background-color: rgb(26, 93, 95);
     position: absolute;
     top: .0rem;
@@ -215,35 +165,6 @@ body {
     background-color: var(--hover);
 }
 
-@media screen and (max-width: 900px) { 
-    .projects-btn {
-        font-size: 1.3rem;
-    }
-}
-
-@media screen and (max-width: 500px) { 
-    .projects-btn {
-        font-size: 1.2rem;
-    }
-}
-
-@media screen and (max-width: 400px) { 
-    .projects-btn {
-        top: 45%;
-        font-size: 1rem;
-    }
-
-    .projects-btn::before {
-        width: .3rem;
-        left: -.3rem;
-    }
-
-    .projects-btn::after {
-        height: .3rem;
-        top: -.3rem;
-    }
-}
-
 .title {
     position: fixed;
     top: 50%;
@@ -260,33 +181,6 @@ body {
     color: var(--primaryColor);
 }
 
-@media screen and (max-width: 1200px) { 
-    .title div {
-        font-size: 5rem;
-    }
-}
-
-@media screen and (max-width: 1050px) { 
-    .title div {
-        font-size: 4.5rem;
-    }
-}
-
-@media screen and (max-width: 900px) { 
-    .title {
-        left: 2%;
-    }
-
-    .title div {
-        font-size: 4rem;
-    }
-}
-
-@media screen and (max-width: 650px) { 
-    .title {
-        display: none;
-    }
-}
 /* Cube */
 .cube-wrapper {
     position: fixed;
@@ -358,7 +252,34 @@ body {
     filter: blur(5rem);
 }
 
+@keyframes show {
+    100% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes hide {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+/* ScrollBar */
+::-webkit-scrollbar {
+    width: 0;
+}
+
+/* Responsive */
 @media screen and (max-width: 1200px) { 
+    .title div {
+        font-size: 5rem;
+    }
+
     .cube {
         width: 20rem;
         height: 20rem;
@@ -378,6 +299,35 @@ body {
         width: 20rem;
         height: 20rem;
         transform: translateZ(-30rem);
+    }
+}
+
+@media screen and (max-width: 1050px) { 
+    .title div {
+        font-size: 4.5rem;
+    }
+}
+
+
+@media screen and (max-width: 900px) { 
+    .message {
+        font-size: 3rem;
+    }
+
+    .myimg {
+        width: 40rem;
+    }
+
+    .projects-btn {
+        font-size: 1.3rem;
+    }
+
+    .title {
+        left: 2%;
+    }
+
+    .title div {
+        font-size: 4rem;
     }
 }
 
@@ -404,27 +354,60 @@ body {
     }
 }
 
-@keyframes show {
-    100% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-        visibility: visible;
+@media screen and (max-width: 650px) { 
+    .title {
+        display: none;
     }
 }
 
-@keyframes hide {
-    100% {
-        opacity: 0;
-        visibility: hidden;
+@media screen and (max-width: 600px) { 
+    .message {
+        font-size: 2.5rem;
     }
 }
 
-/* ScrollBar */
-::-webkit-scrollbar {
-    width: 0;
+@media screen and (max-width: 500px) { 
+    .menu a {
+        font-size: 1.8rem;
+    }
+
+    .myimg {
+        width: 35rem;
+    }
+
+    .projects-btn {
+        font-size: 1.2rem;
+    }
+
+    .message {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2rem;
+    }
 }
 
+@media screen and (max-width: 400px) { 
+    .myimg {
+        width: 30rem;
+    }
 
+    .projects-btn {
+        top: 45%;
+        font-size: 1rem;
+    }
 
+    .projects-btn::before {
+        width: .3rem;
+        left: -.3rem;
+    }
+
+    .projects-btn::after {
+        height: .3rem;
+        top: -.3rem;
+    }
+
+    .message {
+        top: 40%;
+        font-size: 1.6rem;
+    }
+}
+/* End of Responsive */

@@ -5,8 +5,8 @@
     position: relative;
     margin: 5rem auto;
     transition: all .5s;
-    /* opacity: 0;
-    visibility: hidden; */
+    opacity: 0;
+    visibility: hidden;
     animation: show 3s 5s forwards;
 }
 
@@ -169,9 +169,12 @@
 }
 
 @media screen and (max-width: 650px) {
+    .projects-wrapper {
+        padding-right: 5rem;
+    }
 
     .project {
-        width: 90%;
+        width: 100%;
     }
 
     .project-btn {
@@ -180,11 +183,17 @@
     }
 }
 
-@media screen and (max-width: 550px) {
-
+@media screen and (max-width: 500px) {
     .project .description {
         display: none;
     }
-}
 
+    .project-tehnologies {
+        font-size: 1rem;
+    }
+
+    .project-btn {
+        font-size: 1rem;
+    }
+}
 /* End of Responsive */
