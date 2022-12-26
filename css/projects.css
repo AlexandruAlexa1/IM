@@ -5,54 +5,9 @@
     position: relative;
     margin: 5rem auto;
     transition: all .5s;
-    opacity: 0;
-    visibility: hidden;
+    /* opacity: 0;
+    visibility: hidden; */
     animation: show 3s 5s forwards;
-}
-
-@media screen and (max-width: 1500px) { 
-    .project {
-        width: 90rem;
-    }
-}
-
-@media screen and (max-width: 1200px) { 
-    .project {
-        width: 80rem;
-        height: 50rem;
-    }
-}
-
-@media screen and (max-width: 1050px) { 
-    .project {
-        width: 70rem;
-    }
-}
-
-@media screen and (max-width: 900px) { 
-    .project {
-        width: 60rem;
-        height: 40rem;
-        margin: 3rem auto;
-    }
-}
-
-@media screen and (max-width: 750px) { 
-    .project {
-        width: 50rem;
-        height: 30rem;
-        margin: 3rem auto;
-    }
-}
-
-@media screen and (max-width: 650px) {
-    .projects-wrapper {
-        padding: 0 5rem;
-    }
-
-    .project {
-        width: 100%;
-    }
 }
 
 .project-img {
@@ -160,3 +115,76 @@
 .project-btn:hover {
     background-color: var(--hover);
 }
+
+/* Responsive */
+@media screen and (max-width: 1500px) { 
+    .project {
+        width: 90rem;
+    }
+}
+
+@media screen and (max-width: 1200px) { 
+    .project {
+        width: 80rem;
+        height: 50rem;
+    }
+
+    .project-name {
+        font-size: 1.3rem;
+    }
+
+    .project .description {
+        font-size: 1.3rem;
+    }
+
+    .project-tehnologies {
+        font-size: 1.3rem;
+    }
+}
+
+@media screen and (max-width: 1050px) { 
+    .project {
+        width: 70rem;
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    .project {
+        width: 60rem;
+        height: 40rem;
+        margin: 3rem auto;
+    }
+
+    .project-name {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px) { 
+    .project {
+        width: 50rem;
+        height: 30rem;
+        margin: 3rem auto;
+    }
+}
+
+@media screen and (max-width: 650px) {
+
+    .project {
+        width: 90%;
+    }
+
+    .project-btn {
+        font-size: 1.2rem;
+        letter-spacing: .4rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+
+    .project .description {
+        display: none;
+    }
+}
+
+/* End of Responsive */

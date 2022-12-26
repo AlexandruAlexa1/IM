@@ -25,6 +25,33 @@ body {
     background-color: #000;
 }
 
+/* Menu */
+.menu {
+    position: fixed;
+    top: .5rem;
+    right: .5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu a {
+    color: var(--primaryColor);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    transition: color .3s;
+}
+
+.menu a:hover {
+    color: var(--hover);
+}
+
+@media screen and (max-width: 500px) { 
+    .menu a {
+        font-size: 1.5rem;
+    }
+}
+/* End of Menu */
+
 .message {
     position: absolute;
     top: 50%;
@@ -399,29 +426,5 @@ body {
     width: 0;
 }
 
-/* Menu */
-.menu {
-    position: fixed;
-    top: .5rem;
-    right: .5rem;
-    display: flex;
-    flex-direction: column;
-}
 
-.menu a {
-    color: var(--primaryColor);
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    transition: color .3s;
-}
-
-.menu a:hover {
-    color: var(--hover);
-}
-
-@media screen and (max-width: 500px) { 
-    .menu a {
-        font-size: 1.5rem;
-    }
-}
 
