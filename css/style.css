@@ -437,7 +437,7 @@ body {
     }
 
     .myimg {
-        width: 35rem;
+        width: 30rem;
     }
 
     .projects-btn {
@@ -473,7 +473,7 @@ body {
     .main-menu a {
         font-size: 1.6rem;
         text-wrap: nowrap;
-        margin: 0 0.5rem;
+        margin: 0 0.4rem;
     }
 }
 
