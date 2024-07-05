@@ -26,6 +26,49 @@ body {
 }
 
 /* Menu */
+.main-menu {
+    position: absolute;
+    bottom: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.main-menu a {
+    color: var(--primaryColor);
+    font-size: 2rem;
+    margin: 0 2rem;
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    opacity: 0;
+    visibility: hidden;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+.main-menu a:hover {
+    color: var(--hover);
+}
+
+.main-menu a:nth-child(1) {
+    animation-name: showMenu;
+    animation-delay: 5s;
+}
+
+.main-menu a:nth-child(2) {
+    animation-name: showMenu;
+    animation-delay: 5.5s;
+}
+
+.main-menu a:nth-child(3) {
+    animation-name: showMenu;
+    animation-delay: 6s;
+}
+
+.main-menu a:nth-child(4) {
+    animation-name: showMenu;
+    animation-delay: 6.5s;
+}
+
 .menu {
     position: fixed;
     top: .5rem;
@@ -48,7 +91,7 @@ body {
 /* End of Menu */
 
 .myimg {
-    width: 45rem;
+    width: 40rem;
     position: absolute;
     top: -50rem;
     left: 50%;
@@ -56,67 +99,42 @@ body {
     z-index: -1;
     opacity: 0;
     visibility: hidden;
-    animation: showMyimg 3s 10s forwards;
-}
-
-@keyframes showMyimg {
-    50% {
-       opacity: .5; 
-    }
-    100% {
-        top: 0;
-        opacity: 1;
-        visibility: visible;
-    }
+    animation: showMyimg 2s 4s forwards;
 }
 
 .message {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    font-family: 'Roboto', sans-serif;
     color: var(--primaryColor);
     font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: .5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     visibility: hidden;
     opacity: 0;
     white-space: nowrap;
-    font-family: 'Roboto', sans-serif;
-    animation-name: show;
-    animation-duration: 3s;
+    animation-duration: 2s;
 }
 
 .message:nth-child(1) {
-    animation-delay: 1s;
+    animation-name: showMessage;
+    animation-delay: 0s;
 }
 
 .message:nth-child(2) {
-    animation-delay: 4s;
+    animation-name: showMessage;
+    animation-delay: 2s;
 }
 
 .message:nth-child(3) {
-    animation-delay: 7s;
-}
-
-.message:nth-child(4) {
-    animation-delay: 10s;
-}
-
-.message:nth-child(5) {
-    animation-delay: 13s;
-}
-
-.message:nth-child(6) {
-    animation-duration: 10s;
+    animation-name: showLastMessage;
+    animation-delay: 4s;
     animation-fill-mode: forwards;
-    animation-delay: 16s;
-}
-
-@keyframes test {
-    100% {
-        visibility: visible;
-    }
+    white-space: unset;
+    text-align: center;
+    line-height: 3rem;
 }
 
 .projects-btn {
@@ -191,12 +209,7 @@ body {
     z-index: 1;
 }
 
-@keyframes hideCube {
-   100% {
-    opacity: 0;
-    display: none;
-   }
-}
+
 
 .cube {
     width: 30rem;
@@ -204,11 +217,6 @@ body {
     position: relative;
     transform-style: preserve-3d;
     animation: moveCube 5s linear infinite;
-}
-
-@keyframes moveCube {
-    0% { transform: rotateX(-30deg) rotateY(0deg); }
-    100% { transform: rotateX(-30deg) rotateY(360deg); }
 }
 
 .cube div {
@@ -252,8 +260,53 @@ body {
     filter: blur(5rem);
 }
 
-@keyframes show {
+/* Animations */
+@keyframes showMenu {
+    0% {
+        opacity: 0;
+    }
     100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes showMyimg {
+    50% {
+       opacity: .5; 
+    }
+    100% {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes showMessage {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        visibility: visible;
+    }
+}
+
+@keyframes showLastMessage {
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@keyframes show {
+    0% {
         opacity: 0;
     }
     100% {
@@ -267,6 +320,18 @@ body {
         opacity: 0;
         visibility: hidden;
     }
+}
+
+@keyframes hideCube {
+    100% {
+     opacity: 0;
+     display: none;
+    }
+ }
+
+ @keyframes moveCube {
+    0% { transform: rotateX(-30deg) rotateY(0deg); }
+    100% { transform: rotateX(-30deg) rotateY(360deg); }
 }
 
 /* ScrollBar */
@@ -383,7 +448,30 @@ body {
     .message {
         top: 50%;
         font-family: 'Roboto', sans-serif;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+    }
+
+    .message:nth-child(3) {
+        animation-name: showLastMessage;
+        animation-delay: 4s;
+        animation-fill-mode: forwards;
+        white-space: unset;
+        text-align: center;
+        line-height: 2rem;
+        font-size: 1.6rem;
+        top: 60%;
+    }
+
+    .main-menu {
+        bottom: 6%;
+        left: 52%;
+        display: flex;
+    }
+    
+    .main-menu a {
+        font-size: 1.6rem;
+        text-wrap: nowrap;
+        margin: 0 0.5rem;
     }
 }
 
@@ -409,9 +497,6 @@ body {
         height: .3rem;
         top: -.3rem;
     }
-
-    .message {
-        font-size: 1.5rem;
-    }
+    
 }
 /* End of Responsive */
